@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: #000000;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0 auto;
+  background-color: rgb(0, 0, 0);
+  font-family: 'Rubik', sans-serif;
+  color: rgb(255, 255, 255);
+}
+
+.wrapper {
+  margin: 15rem auto;
+  display: grid;
+  grid-template-rows: 7.5rem 31rem 8rem 3rem 15.2rem 2rem;
+  width: 37.5rem;
+  height: 66.7rem;
+  background-color: var(--main-color);
+}
+
+.header {
+  align-self: flex-end;
+  justify-self: center;
+}
+
+.header h3 {
+  font-weight: 500;
+  font-size: 1.8rem;
+  color: white;
+  margin: 0 0 1.9rem 0;
+}
+
+.main-player {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+}
+
+.main-player::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  min-width: 24.9rem;
+  height: 24.9rem;
+  margin: 0 3.4rem 0 0;
+  border-radius: 25px;
+  scroll-snap-align: center;
+  padding: 0.9rem;
+  box-shadow: 7px -7px 12px 2px #ffffff,
+              -7px 7px 12px 2px #ffffff;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 2.5rem;
+}
+
+.title {
+  justify-self: center;
+  text-align: center;
+}
+
+.title h2 {
+  margin: 0;
+  margin-top: 1.4rem;
+  font-weight: 500;
+  font-size: 2.2rem;
+}
+
+.title h3 {
+  margin: 0;
+  margin-top: 0.7rem;
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+
+.progress-bar {
+  display: grid;
+  grid-template-columns: repeat(2, 18.75px) 1fr repeat(2, 18.75px);
+  grid-template-rows: 10px 1fr;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 0.2rem;
+}
+
+.progress-bar .bar {
+  grid-column: 3;
+  position: relative;
+  width: 300px;
+  height: 5px;
+  clip-path: polygon()(82% 10% 16% 10%);
+  background: linear-gradient(to right, #ffffff, #ff0000);
+  border-radius: 20px;
+}
+
+.progress-bar .bar .dot {
+  position: absolute;
+  left: 120px;
+  top: -2px;
+  width: 9px;
+  height: 9px;
+  background-color: #ff0000;
+  clip-path: circle(100%);
+  border-radius: 50%;
+}
+
+.progress-bar .start {
+  grid-column: 2;
+  grid-row: 2;
+  font-size: 12px;
+  font-weight: 500;
+}
+.progress-bar .end {
+  position: relative;
+  left: -4px;
+  justify-self: center;
+  grid-column: 4;
+  grid-row: 2;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.player-buttons {
+  width: 40px;
+  height: 40px;
+  box-shadow: 4px -4px 8px 2px #ff0000,
+              -4px 4px 8px 2px #ff0000;
+  border-radius: 50px;
+}
+.play {
+  margin: 0 1.6rem;
+  width: 60px;
+  height: 60px;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/260/260446.png');
+  background-repeat: no-repeat;
+  background-size: 35px;
+  background-position: center;
+}
+.shuffle {
+  margin-right: 1.6rem;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/3039/3039460.png');
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center;
+}
+.previously {
+  background-image: url('https://png.pngtree.com/png-vector/20231115/ourmid/pngtree-prev-icon-icon-png-image_10604672.png');
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center;
+}
+.next {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/1262/1262022.png');
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center;
+}
+.repeat {
+  margin-left: 1.6rem;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/148/148752.png');
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-bar {
+  width: 142px;
+  height: 5px;
+  border-radius: 50px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.shuffle:hover, .previously:hover, .next:hover, .repeat:hover {
+  box-shadow: inset 4px 4px 8px #c8b2aa,
+            inset -4px -4px 8px #fff0e6;
+}
+
+.play:hover {
+  box-shadow: inset 4px 4px 8px #c8b2aa,
+            inset -4px -4px 8px #fff0e6;
+}
+
+@media only screen and (min-width: 320px) {
+    .wrapper {
+      margin: 0 auto;
+      width: 100%;
+    }
+    .progress-bar .bar {
+        width: 100%;
+    }
+  }
+  
+  @media only screen and (min-width: 600px) {
+    .wrapper {
+      width: 100%;
+    }
+    .progress-bar .bar {
+        width: 100%;
+    }
+  }
+  
+  @media only screen and (min-width: 750px) {
+    .wrapper {
+        width: 100%;
+    }
+    .card {
+        max-width: 30rem;
+        height: auto;
+    }
+    .main-player {
+        justify-content: space-between;
+    }
+  }
+  
+  @media only screen and (min-width: 900px) {
+    .wrapper {
+        width: 100%;
+    }
+    .main-player {
+        justify-content: space-between;
+    }
+    
+  }
